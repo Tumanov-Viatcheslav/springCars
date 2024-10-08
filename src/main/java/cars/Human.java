@@ -1,7 +1,14 @@
 package cars;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("Person")
 public class Human {
     String name;
+    @Qualifier("ncar1")
+    @Autowired
     private Car car;
 
     public Human(String name) {

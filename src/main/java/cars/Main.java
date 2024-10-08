@@ -1,6 +1,7 @@
 package cars;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -26,10 +27,21 @@ public class Main {
         System.out.println(owner3);
         System.out.println(car1);
         System.out.println(car2);
+        System.out.println("======================================");
+    }
+    public static void ex3() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Car car1 = context.getBean("ncar1", Car.class);
+        Car car2 = context.getBean("ncar2", Car.class);
+        Human owner1 = context.getBean("nowner1", Human.class);
+        System.out.println(owner1);
+        System.out.println(car1);
+        System.out.println(car2);
     }
 
     public static void main(String[] args) {
         ex1();
         ex2();
+        ex3();
     }
 }

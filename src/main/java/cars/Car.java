@@ -1,8 +1,14 @@
 package cars;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("Automobile")
 public class Car {
     String model;
     int year;
+    @Autowired
     private Human owner;
 
     public Car(String model, int year) {
