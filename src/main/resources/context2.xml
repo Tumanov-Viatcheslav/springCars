@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="car1" class="cars.Car">
+        <constructor-arg value="Auto1"/>
+        <constructor-arg value="1979"/>
+        <property name="owner">
+            <ref bean="owner1"/>
+        </property>
+    </bean>
+    <bean id="car2" class="cars.Car">
+        <constructor-arg value="Auto2"/>
+        <constructor-arg value="2015"/>
+        <property name="owner">
+            <ref bean="owner2"/>
+        </property>
+    </bean>
+
+    <bean id="owner1" class="cars.Human">
+        <constructor-arg value="Owner1"/>
+        <property name="car">
+            <ref bean="car1"/>
+        </property>
+    </bean>
+    <bean id="owner2" class="cars.Human">
+        <constructor-arg value="Owner2"/>
+        <property name="car">
+            <ref bean="car2"/>
+        </property>
+    </bean>
+    <bean id="owner3" class="cars.Human">
+        <constructor-arg value="Owner3"/>
+    </bean>
+</beans>
